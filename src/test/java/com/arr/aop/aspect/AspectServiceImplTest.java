@@ -1,6 +1,7 @@
 package com.arr.aop.aspect;
 
 
+import com.arr.aop.rest.AspectController;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +18,9 @@ public class AspectServiceImplTest {
     @Autowired
     private AspectService aspectService;
 
+    @Autowired
+    private AspectController aspectController;
+
 //    @Before
 //    public void init(){
 //        aspectService = new AspectServiceImpl();
@@ -26,5 +30,11 @@ public class AspectServiceImplTest {
     public void testAdd() {
         int result = aspectService.add(10, 20);
         Assert.assertEquals(30, result);
+    }
+
+    @Test
+    public void testControllerBeansMethod()
+    {
+        aspectController.registeredBeans();
     }
 }

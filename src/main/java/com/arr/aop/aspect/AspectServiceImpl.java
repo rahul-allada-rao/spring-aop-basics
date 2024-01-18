@@ -11,7 +11,7 @@ public class AspectServiceImpl implements AspectService{
 
     @Override
     public int add(int x, int y) {
-        logger.info(">> AspectServiceImpl.add()");
+        logger.trace(">> AspectServiceImpl.add()");
         return x+y;
     }
 }
